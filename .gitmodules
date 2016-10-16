@@ -1,0 +1,48 @@
+[submodule "message"]
+	path = message
+	url = https://github.com/anthill-services/anthill-message.git
+[submodule "exec"]
+	path = exec
+	url = https://github.com/anthill-services/anthill-exec.git
+[submodule "event"]
+	path = event
+	url = https://github.com/anthill-services/anthill-event.git
+[submodule "game"]
+	path = game
+	url = https://github.com/anthill-services/anthill-game.git
+[submodule "leaderboard"]
+	path = leaderboard
+	url = https://github.com/anthill-services/anthill-leaderboard.git
+[submodule "config"]
+	path = config
+	url = https://github.com/anthill-services/anthill-config.git
+[submodule "dlc"]
+	path = dlc
+	url = https://github.com/anthill-services/anthill-dlc.git
+[submodule "store"]
+	path = store
+	url = https://github.com/anthill-services/anthill-store.git
+[submodule "common"]
+	path = common
+	url = https://github.com/anthill-services/anthill-common.git
+[submodule "login"]
+	path = login
+	url = https://github.com/anthill-services/anthill-login.git
+[submodule "promo"]
+	path = promo
+	url = https://github.com/anthill-services/anthill-promo.git
+[submodule "profile"]
+	path = profile
+	url = https://github.com/anthill-services/anthill-profile.git
+[submodule "social"]
+	path = social
+	url = https://github.com/anthill-services/anthill-social.git
+[submodule "discovery"]
+	path = discovery
+	url = https://github.com/anthill-services/anthill-discovery.git
+[submodule "admin"]
+	path = admin
+	url = https://github.com/anthill-services/anthill-admin.git
+[submodule "environment"]
+	path = environment
+	url = https://github.com/anthill-services/anthill-environment.git
