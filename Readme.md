@@ -9,9 +9,9 @@
 
 # Runtimes
 It also comes with game client runtimes for various programming languages for quick start. They allow to interact with services and handle most of core tasks under the hood.
-* [Unity](https://github.com/anthill-services/runtime-unity/)
-* [Java](https://github.com/anthill-services/runtime-java/)
-* [C++](https://github.com/anthill-services/runtime-cpp/)
+* [Java](https://github.com/anthill-services/anthill-runtime-java/)
+* [Unity](https://github.com/anthill-services/anthill-runtime-unity/)
+* [C++](https://github.com/anthill-services/anthill-runtime-cpp/)
 
 # Core services
 | Service | Description |
