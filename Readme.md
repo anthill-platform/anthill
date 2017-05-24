@@ -1,3 +1,7 @@
+<center>
+<img src="https://cloud.githubusercontent.com/assets/1666014/26267105/0169f088-3cf1-11e7-93e9-2d0d0169eacc.png" width="48">
+</center>
+
 # A back-end platform for games.
 
 * **Self-hosted**. You have full control of the system. That makes it cheaper and a lot easier to modify.
