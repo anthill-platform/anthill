@@ -13,25 +13,25 @@
 
 # Runtimes
 It also comes with game client runtimes for various programming languages for quick start. They allow to interact with services and handle most of core tasks under the hood.
-* [Java](https://github.com/anthill-services/anthill-runtime-java/)
-* [Unity](https://github.com/anthill-services/anthill-runtime-unity/)
-* [C++](https://github.com/anthill-services/anthill-runtime-cpp/)
+* [Java](https://github.com/anthill-platform/anthill-runtime-java/)
+* [Unity](https://github.com/anthill-platform/anthill-runtime-unity/)
+* [C++](https://github.com/anthill-platform/anthill-runtime-cpp/)
 
 # Core services
 | Service | Description |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| [environment](https://github.com/anthill-services/anthill-environment/) | Define a set of environments and dynamically assign each game version to any of those |
-| [discovery](https://github.com/anthill-services/anthill-discovery/) | Discover each service location dynamically by it's ID |
-| [login](https://github.com/anthill-services/anthill-login/) | Solves authentication. Login using any kind of credential (like google or facebook), or your own |
-| [profile](https://github.com/anthill-services/anthill-profile/) | Manages user profiles. Just a plain JSON object, completely defined by a game |
-| [social](https://github.com/anthill-services/anthill-social/) | Social interactions (social network's friend list etc) |
-| [config](https://github.com/anthill-services/anthill-config/) | Delivers dynamic configuration to the user using handy schema editor |
-| [leaderboard](https://github.com/anthill-services/anthill-leaderboard/) | Competes users around by anything |
-| [exec](https://github.com/anthill-services/anthill-exec/) | Server-side game-depended javascript code execution (validation and so on) |
-| [common](https://github.com/anthill-services/anthill-common/) | A shared library with common functionality for each service |
-| [admin](https://github.com/anthill-services/anthill-admin/) | Internal service, allows to manage every service across the environment using web browser |
-| [dlc](https://github.com/anthill-services/anthill-dlc/) | Downloadable content delivery service |
-| [game](https://github.com/anthill-services/anthill-game/) | Matchmaking service, allows to start any game server to a server side, and match users around it |
-| [message](https://github.com/anthill-services/anthill-message/) | Delivers messages from anything to anything, realtime |
-| [store](https://github.com/anthill-services/anthill-store/) | Monetization service |
-| [promo](https://github.com/anthill-services/anthill-promo/) | Promo codes service |
+| [environment](https://github.com/anthill-platform/anthill-environment/) | Define a set of environments and dynamically assign each game version to any of those |
+| [discovery](https://github.com/anthill-platform/anthill-discovery/) | Discover each service location dynamically by it's ID |
+| [login](https://github.com/anthill-platform/anthill-login/) | Solves authentication. Login using any kind of credential (like google or facebook), or your own |
+| [profile](https://github.com/anthill-platform/anthill-profile/) | Manages user profiles. Just a plain JSON object, completely defined by a game |
+| [social](https://github.com/anthill-platform/anthill-social/) | Social interactions (social network's friend list etc) |
+| [config](https://github.com/anthill-platform/anthill-config/) | Delivers dynamic configuration to the user using handy schema editor |
+| [leaderboard](https://github.com/anthill-platform/anthill-leaderboard/) | Competes users around by anything |
+| [exec](https://github.com/anthill-platform/anthill-exec/) | Server-side game-depended javascript code execution (validation and so on) |
+| [common](https://github.com/anthill-platform/anthill-common/) | A shared library with common functionality for each service |
+| [admin](https://github.com/anthill-platform/anthill-admin/) | Internal service, allows to manage every service across the environment using web browser |
+| [dlc](https://github.com/anthill-platform/anthill-dlc/) | Downloadable content delivery service |
+| [game](https://github.com/anthill-platform/anthill-game/) | Matchmaking service, allows to start any game server to a server side, and match users around it |
+| [message](https://github.com/anthill-platform/anthill-message/) | Delivers messages from anything to anything, realtime |
+| [store](https://github.com/anthill-platform/anthill-store/) | Monetization service |
+| [promo](https://github.com/anthill-platform/anthill-promo/) | Promo codes service |
