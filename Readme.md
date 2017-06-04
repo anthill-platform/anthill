@@ -35,3 +35,4 @@ It also comes with game client runtimes for various programming languages for qu
 | [message](https://github.com/anthill-platform/anthill-message/) | Delivers messages from anything to anything, realtime |
 | [store](https://github.com/anthill-platform/anthill-store/) | Monetization service |
 | [promo](https://github.com/anthill-platform/anthill-promo/) | Promo codes service |
+| [static](https://github.com/anthill-platform/anthill-static/) | Simple static files hosting service (for players to upload) |

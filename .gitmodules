@@ -46,3 +46,6 @@
 [submodule "environment"]
 	path = environment
 	url = https://github.com/anthill-platform/anthill-environment.git
+[submodule "static"]
+	path = static
+	url = https://github.com/anthill-platform/anthill-static.git
