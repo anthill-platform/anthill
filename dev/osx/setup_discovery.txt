@@ -1,0 +1,16 @@
+set_discovery admin internal=http://localhost:9500 external=http://localhost:9500 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery login internal=http://localhost:9501 external=http://localhost:9501 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery discovery internal=http://localhost:9502 external=http://localhost:9502 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery environment internal=http://localhost:9503 external=http://localhost:9503 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery config internal=http://localhost:9504 external=http://localhost:9504 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery dlc internal=http://localhost:9505 external=http://localhost:9505 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery event internal=http://localhost:9506 external=http://localhost:9506 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery exec internal=http://localhost:9507 external=http://localhost:9507 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery game internal=http://localhost:9508 external=http://localhost:9508 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery leaderboard internal=http://localhost:9510 external=http://localhost:9510 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery message internal=http://localhost:9511 external=http://localhost:9511 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery profile internal=http://localhost:9512 external=http://localhost:9512 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery promo internal=http://localhost:9513 external=http://localhost:9513 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery social internal=http://localhost:9514 external=http://localhost:9514 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery static internal=http://localhost:9515 external=http://localhost:9515 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery store internal=http://localhost:9516 external=http://localhost:9516 broker=amqp://guest:guest@127.0.0.1:5672/
