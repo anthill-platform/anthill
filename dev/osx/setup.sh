@@ -36,19 +36,19 @@ ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 
 # create various databases
-mysql -u root -e "create database dev_login;"
-mysql -u root -e "create database dev_config;"
-mysql -u root -e "create database dev_dlc;"
-mysql -u root -e "create database dev_environment;"
-mysql -u root -e "create database dev_event;"
-mysql -u root -e "create database dev_exec;"
-mysql -u root -e "create database dev_game;"
-mysql -u root -e "create database dev_leaderborad;"
-mysql -u root -e "create database dev_message;"
-mysql -u root -e "create database dev_profile;"
-mysql -u root -e "create database dev_promo;"
-mysql -u root -e "create database dev_social;"
-mysql -u root -e "create database dev_store;"
+mysql -h 127.0.0.1 -u root -e "create database dev_login;"
+mysql -h 127.0.0.1 -u root -e "create database dev_config;"
+mysql -h 127.0.0.1 -u root -e "create database dev_dlc;"
+mysql -h 127.0.0.1 -u root -e "create database dev_environment;"
+mysql -h 127.0.0.1 -u root -e "create database dev_event;"
+mysql -h 127.0.0.1 -u root -e "create database dev_exec;"
+mysql -h 127.0.0.1 -u root -e "create database dev_game;"
+mysql -h 127.0.0.1 -u root -e "create database dev_leaderboard;"
+mysql -h 127.0.0.1 -u root -e "create database dev_message;"
+mysql -h 127.0.0.1 -u root -e "create database dev_profile;"
+mysql -h 127.0.0.1 -u root -e "create database dev_promo;"
+mysql -h 127.0.0.1 -u root -e "create database dev_social;"
+mysql -h 127.0.0.1 -u root -e "create database dev_store;"
 
 # copy nginx configuration
 cp nginx.conf /usr/local/etc/nginx/servers/dev.conf
