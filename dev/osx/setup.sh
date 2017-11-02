@@ -29,13 +29,14 @@ pip install git+https://github.com/anthill-utils/pyjwt.git
 pip install git+https://github.com/anthill-utils/pika.git
 pip install pyOpenSSL cffi cryptography futures ipgetter expiringdict python-geoip
 pip install python-geoip-geolite2-yplan psutil lazy
-pip install git+https://github.com/anthill-utils/pyv8.git
+pip install git+https://github.com/anthill-utils/v8py.git
 
 # start mysql server
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 
 # create various databases
+mysql -h 127.0.0.1 -u root -e "create database dev_admin;"
 mysql -h 127.0.0.1 -u root -e "create database dev_login;"
 mysql -h 127.0.0.1 -u root -e "create database dev_config;"
 mysql -h 127.0.0.1 -u root -e "create database dev_dlc;"
