@@ -54,10 +54,6 @@ mysql -h 127.0.0.1 -u root -e "create database dev_social;"
 mysql -h 127.0.0.1 -u root -e "create database dev_store;"
 mysql -h 127.0.0.1 -u root -e "create database dev_report;"
 
-# copy nginx configuration
-cp nginx.conf /usr/local/etc/nginx/servers/dev.conf
-mkdir /usr/local/var/run/anthill
-
 # generate private key pair
 mkdir ../../.anthill-keys
 openssl genrsa -des3 -passout pass:wYrA9O187G71ILmZr67GZG945SgarS4K -out ../../.anthill-keys/anthill.pem 512
