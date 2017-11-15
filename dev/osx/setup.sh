@@ -9,8 +9,6 @@ brew install mysql
 brew install rabbitmq
 brew install nginx
 brew install redis
-brew install boost --with-python
-brew install boost-python
 
 # setup a virtualenv
 easy_install virtualenv
@@ -29,7 +27,11 @@ pip install git+https://github.com/anthill-utils/pyjwt.git
 pip install git+https://github.com/anthill-utils/pika.git
 pip install pyOpenSSL cffi cryptography futures ipgetter expiringdict python-geoip
 pip install python-geoip-geolite2-yplan psutil lazy
-pip install git+https://github.com/anthill-utils/v8py.git
+
+git clone https://github.com/anthill-utils/v8py.git
+cd v8py
+CFLAGS='-Wall -O0 -g' python setup.py install
+cd ../
 
 # start mysql server
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents

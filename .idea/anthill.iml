@@ -21,7 +21,7 @@
       <sourceFolder url="file://$MODULE_DIR$/store/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/report/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 2.7.13 virtualenv at /usr/local/venv/dev" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 2.7.10 virtualenv at /usr/local/venv/dev" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
