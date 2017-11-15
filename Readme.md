@@ -36,3 +36,4 @@ It also comes with game client runtimes for various programming languages for qu
 | [store](https://github.com/anthill-platform/anthill-store/) | Monetization service |
 | [promo](https://github.com/anthill-platform/anthill-promo/) | Promo codes service |
 | [static](https://github.com/anthill-platform/anthill-static/) | Simple static files hosting service (for players to upload) |
+| [report](https://github.com/anthill-platform/anthill-report/) | Service for players to post reports to the service. Later the reports can be analyzed and used. |
