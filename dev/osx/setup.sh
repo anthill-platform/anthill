@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ $EUID -eq 0 ]]; then
+  echo "Do not run this script as root." 2>&1
+  exit 1
+fi
+
 # install Homebrew first
 export TRAVIS=1
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -8,6 +13,10 @@ export TRAVIS=1
 brew install mysql
 brew install rabbitmq
 brew install redis
+
+mkdir /opt/local
+sudo mkdir /opt/local/anthill
+sudo chmod -R 770 /opt/local/anthill
 
 # setup a virtualenv
 easy_install virtualenv
