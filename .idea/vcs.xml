@@ -16,6 +16,7 @@
     <mapping directory="$PROJECT_DIR$/message" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/profile" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/promo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/report" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/social" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/static" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/store" vcs="Git" />

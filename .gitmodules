@@ -49,3 +49,6 @@
 [submodule "static"]
 	path = static
 	url = https://github.com/anthill-platform/anthill-static.git
+[submodule "report"]
+	path = report
+	url = https://github.com/anthill-platform/anthill-report.git
