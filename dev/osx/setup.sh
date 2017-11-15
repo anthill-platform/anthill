@@ -30,6 +30,7 @@ pip install python-geoip-geolite2-yplan psutil lazy
 
 git clone https://github.com/anthill-utils/v8py.git
 cd v8py
+export MACOSX_DEPLOYMENT_TARGET=10.8
 CFLAGS='-Wall -O0 -g' python setup.py install
 cd ../
 
