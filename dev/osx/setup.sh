@@ -19,7 +19,7 @@ virtualenv /usr/local/venv/dev
 
 source /usr/local/venv/dev/bin/activate
 
-pip install termcolor ipaddr ujson pyzmq redis tornado pycrypto mysql-python
+pip install termcolor ipaddr ujson pyzmq redis tornado pycrypto mysql-python GitPython
 pip install git+https://github.com/anthill-utils/tornado-redis.git
 pip install git+https://github.com/anthill-utils/PyMySQL.git
 pip install tormysql sphinx
