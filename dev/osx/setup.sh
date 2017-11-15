@@ -7,7 +7,6 @@ export TRAVIS=1
 # bunch of important packages
 brew install mysql
 brew install rabbitmq
-brew install nginx
 brew install redis
 
 # setup a virtualenv
@@ -62,6 +61,5 @@ openssl genrsa -des3 -passout pass:wYrA9O187G71ILmZr67GZG945SgarS4K -out ../../.
 openssl rsa -in ../../.anthill-keys/anthill.pem -passin pass:wYrA9O187G71ILmZr67GZG945SgarS4K -outform PEM -pubout -out ../../.anthill-keys/anthill.pub
 
 # start rest of the services
-brew services start nginx
 brew services start rabbitmq
 brew services start redis
