@@ -1,7 +1,7 @@
 
-<center>
+<div align="center">
 <img src="https://cloud.githubusercontent.com/assets/1666014/26267105/0169f088-3cf1-11e7-93e9-2d0d0169eacc.png" width="48">
-</center>
+</div>
 
 # Hack In
 
@@ -31,17 +31,26 @@ This will install Homebrew, and Homebrew will install all of the required compon
 cd anthill/osx
 ./setup_discovery.sh
 ```
-5. Open cloned repo in PyCharm, select `all` run configuration, hit Run
-6. Open `http://localhost:9500` in your browser
-7. Press "Proceed", login using username `root` and password `anthill`.
-8. You should see something like this:
+5. Open cloned repo in PyCharm 
+6. Go to `Preferences`, select `Project Interpreter`, select `Show All` from the dropdown,
+hit "+", select `Add Local`, and feed it with `/usr/local/venv/dev/bin/python`.
+7. Select `all` run configuration, hit Run
 
-<center>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/1666014/32844921-379a61a6-ca2c-11e7-8640-3a4403a30187.png" height="24">
+</div>
+<br>
+
+8. Open `http://localhost:9500` in your browser
+9. Press "Proceed", login using username `root` and password `anthill`.
+10. You should see something like this:
+
+<div align="center">
 <a href="https://user-images.githubusercontent.com/1666014/32834423-3b24fef6-ca0b-11e7-8276-240d3ccb6ce8.png"><img src="https://user-images.githubusercontent.com/1666014/32834374-0ba5b288-ca0b-11e7-8f2a-0d6729f76a60.png" width="250"></a>
-</center>
+</div>
 
 <br><br>
-<center>
+<div align="center">
 Happy coding!<br>
 <img src="https://user-images.githubusercontent.com/1666014/32833678-417e7866-ca08-11e7-993c-72eacab0fbee.gif">
-</center>
+</div>
