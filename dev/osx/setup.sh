@@ -50,6 +50,7 @@ mysql -h 127.0.0.1 -u root -e "create database dev_profile;"
 mysql -h 127.0.0.1 -u root -e "create database dev_promo;"
 mysql -h 127.0.0.1 -u root -e "create database dev_social;"
 mysql -h 127.0.0.1 -u root -e "create database dev_store;"
+mysql -h 127.0.0.1 -u root -e "create database dev_report;"
 
 # copy nginx configuration
 cp nginx.conf /usr/local/etc/nginx/servers/dev.conf

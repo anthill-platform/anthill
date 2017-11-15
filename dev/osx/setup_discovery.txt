@@ -14,3 +14,4 @@ set_discovery promo internal=http://localhost:9513 external=http://localhost:951
 set_discovery social internal=http://localhost:9514 external=http://localhost:9514 broker=amqp://guest:guest@127.0.0.1:5672/
 set_discovery static internal=http://localhost:9515 external=http://localhost:9515 broker=amqp://guest:guest@127.0.0.1:5672/
 set_discovery store internal=http://localhost:9516 external=http://localhost:9516 broker=amqp://guest:guest@127.0.0.1:5672/
+set_discovery report internal=http://localhost:9517 external=http://localhost:9517 broker=amqp://guest:guest@127.0.0.1:5672/
