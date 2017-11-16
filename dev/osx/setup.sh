@@ -10,6 +10,7 @@ export TRAVIS=1
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # bunch of important packages
+brew install mysql-connector-c
 brew install git
 brew install mysql
 brew install rabbitmq
