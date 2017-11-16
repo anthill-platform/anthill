@@ -17,11 +17,14 @@ brew install redis
 
 mkdir /opt/local
 sudo mkdir /opt/local/anthill
-sudo chmod -R 770 /opt/local/anthill
+
+sudo chown -R $(id -u):$(id -g) /opt/local/anthill
 
 # setup a virtualenv
 sudo easy_install virtualenv
-mkdir /usr/local/venv
+sudo mkdir /usr/local/venv
+sudo chown -R $(id -u):$(id -g) /usr/local/venv
+
 virtualenv /usr/local/venv/dev
 
 # install packages into virtualenv at /usr/local/venv/dev
