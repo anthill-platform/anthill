@@ -16,11 +16,12 @@ To setup minimal development environment on Mac Os X, you will need:
 
 ```bash
 git clone -b dev https://github.com/anthill-platform/anthill.git
+cd anthill
 git submodule update --init --recursive
 ```
 3. Run installation script
 ```bash
-cd anthill/osx
+cd dev/osx
 ./setup.sh
 ```
 It would take awhile (up to several hours).
@@ -28,7 +29,7 @@ This will install Homebrew, and Homebrew will install all of the required compon
 
 4. Setup the environment information
 ```bash
-cd anthill/osx
+cd dev/osx
 ./setup_discovery.sh
 ```
 5. Open cloned repo in PyCharm 
