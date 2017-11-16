@@ -26,16 +26,18 @@ cd dev/osx
 ```
 It would take awhile (up to several hours).
 This will install Homebrew, and Homebrew will install all of the required components.
+4. Open cloned repo in PyCharm 
+5. Go to `Preferences`, select `Project Interpreter`, select `Show All` from the dropdown,
+hit "+", select `Add Local`, and feed it with `/usr/local/venv/dev/bin/python`.
 
-4. Setup the environment information
+6. Setup the environment information
+
+Select `dev_discovery` run configuration in PyCharm, start it, then run this:
 ```bash
 cd dev/osx
 ./setup_discovery.sh
 ```
-5. Open cloned repo in PyCharm 
-6. Go to `Preferences`, select `Project Interpreter`, select `Show All` from the dropdown,
-hit "+", select `Add Local`, and feed it with `/usr/local/venv/dev/bin/python`.
-7. Select `all` run configuration, hit Run
+7. Finally, select `all` run configuration, hit Run
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/1666014/32844921-379a61a6-ca2c-11e7-8640-3a4403a30187.png" height="24">
