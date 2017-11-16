@@ -28,19 +28,19 @@ virtualenv /usr/local/venv/dev
 
 source /usr/local/venv/dev/bin/activate
 
-pip install termcolor ipaddr ujson pyzmq redis tornado pycrypto mysql-python GitPython
-pip install git+https://github.com/anthill-utils/tornado-redis.git
-pip install git+https://github.com/anthill-utils/PyMySQL.git
-pip install tormysql sphinx
-pip install git+https://github.com/anthill-utils/pyjwt.git
-pip install git+https://github.com/anthill-utils/pika.git
-pip install pyOpenSSL cffi cryptography futures ipgetter expiringdict python-geoip
-pip install python-geoip-geolite2-yplan psutil lazy
+/usr/local/venv/dev/bin/pip install termcolor ipaddr ujson pyzmq redis tornado pycrypto mysql-python GitPython
+/usr/local/venv/dev/bin/pip install git+https://github.com/anthill-utils/tornado-redis.git
+/usr/local/venv/dev/bin/pip install git+https://github.com/anthill-utils/PyMySQL.git
+/usr/local/venv/dev/bin/pip install tormysql sphinx
+/usr/local/venv/dev/bin/pip install git+https://github.com/anthill-utils/pyjwt.git
+/usr/local/venv/dev/bin/pip install git+https://github.com/anthill-utils/pika.git
+/usr/local/venv/dev/bin/pip install pyOpenSSL cffi cryptography futures ipgetter expiringdict python-geoip
+/usr/local/venv/dev/bin/pip install python-geoip-geolite2-yplan psutil lazy
 
 git clone https://github.com/anthill-utils/v8py.git
 cd v8py
 export MACOSX_DEPLOYMENT_TARGET=10.8
-CFLAGS='-Wall -O0 -g' python setup.py install
+CFLAGS='-Wall -O0 -g' /usr/local/venv/dev/bin/python setup.py install
 cd ../
 
 # start mysql server
