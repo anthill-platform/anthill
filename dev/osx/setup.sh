@@ -20,7 +20,7 @@ sudo mkdir /opt/local/anthill
 sudo chmod -R 770 /opt/local/anthill
 
 # setup a virtualenv
-easy_install virtualenv
+sudo easy_install virtualenv
 mkdir /usr/local/venv
 virtualenv /usr/local/venv/dev
 
