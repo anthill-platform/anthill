@@ -33,23 +33,15 @@ required components.
 5. Setup the Project Interpreter. To do that, go to `Preferences`, select `Project Interpreter`, select `Show All` from the dropdown,
 hit "+", select `Add Local`, and feed it with `/usr/local/venv/dev/bin/python`.
 
-6. Setup the environment information
-
-Select `dev_discovery` run configuration in PyCharm, start it, then run this:
-```bash
-cd dev/osx
-./setup_discovery.sh
-```
-7. Finally, stop the previous configuration, select `all` run configuration, hit Run
+6. Select `all` run configuration, hit Run
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/1666014/32844921-379a61a6-ca2c-11e7-8640-3a4403a30187.png" height="24">
 </div>
 <br>
 
-8. Open [http://localhost:9500](http://localhost:9500) in your browser
-9. Press "Proceed", login using username `root` and password `anthill`.
-10. You should see something like this:
+7. Open [http://localhost:9500](http://localhost:9500) in your browser
+8. Press "Proceed", login using username `root` and password `anthill`. You should see something like this:
 
 <div align="center">
 <a href="https://user-images.githubusercontent.com/1666014/32834423-3b24fef6-ca0b-11e7-8276-240d3ccb6ce8.png"><img src="https://user-images.githubusercontent.com/1666014/32834374-0ba5b288-ca0b-11e7-8f2a-0d6729f76a60.png" width="250"></a>
