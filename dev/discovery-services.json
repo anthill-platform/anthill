@@ -1,88 +1,88 @@
 {
     "services": {
         "admin": {
-            "internal": "http://localhost:9500",
-            "external": "http://localhost:9500",
+            "internal": "http://127.0.0.1:9500",
+            "external": "http://127.0.0.1:9500",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "login": {
-            "internal": "http://localhost:9501",
-            "external": "http://localhost:9501",
+            "internal": "http://127.0.0.1:9501",
+            "external": "http://127.0.0.1:9501",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "discovery": {
-            "internal": "http://localhost:9502",
-            "external": "http://localhost:9502",
+            "internal": "http://127.0.0.1:9502",
+            "external": "http://127.0.0.1:9502",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "environment": {
-            "internal": "http://localhost:9503",
-            "external": "http://localhost:9503",
+            "internal": "http://127.0.0.1:9503",
+            "external": "http://127.0.0.1:9503",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "config": {
-            "internal": "http://localhost:9504",
-            "external": "http://localhost:9504",
+            "internal": "http://127.0.0.1:9504",
+            "external": "http://127.0.0.1:9504",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "dlc": {
-            "internal": "http://localhost:9505",
-            "external": "http://localhost:9505",
+            "internal": "http://127.0.0.1:9505",
+            "external": "http://127.0.0.1:9505",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "event": {
-            "internal": "http://localhost:9506",
-            "external": "http://localhost:9506",
+            "internal": "http://127.0.0.1:9506",
+            "external": "http://127.0.0.1:9506",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "exec": {
-            "internal": "http://localhost:9507",
-            "external": "http://localhost:9507",
+            "internal": "http://127.0.0.1:9507",
+            "external": "http://127.0.0.1:9507",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "game": {
-            "internal": "http://localhost:9508",
-            "external": "http://localhost:9508",
+            "internal": "http://127.0.0.1:9508",
+            "external": "http://127.0.0.1:9508",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "leaderboard": {
-            "internal": "http://localhost:9510",
-            "external": "http://localhost:9510",
+            "internal": "http://127.0.0.1:9510",
+            "external": "http://127.0.0.1:9510",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "message": {
-            "internal": "http://localhost:9511",
-            "external": "http://localhost:9511",
+            "internal": "http://127.0.0.1:9511",
+            "external": "http://127.0.0.1:9511",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "profile": {
-            "internal": "http://localhost:9512",
-            "external": "http://localhost:9512",
+            "internal": "http://127.0.0.1:9512",
+            "external": "http://127.0.0.1:9512",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "promo": {
-            "internal": "http://localhost:9513",
-            "external": "http://localhost:9513",
+            "internal": "http://127.0.0.1:9513",
+            "external": "http://127.0.0.1:9513",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "social": {
-            "internal": "http://localhost:9514",
-            "external": "http://localhost:9514",
+            "internal": "http://127.0.0.1:9514",
+            "external": "http://127.0.0.1:9514",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "static": {
-            "internal": "http://localhost:9515",
-            "external": "http://localhost:9515",
+            "internal": "http://127.0.0.1:9515",
+            "external": "http://127.0.0.1:9515",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "store": {
-            "internal": "http://localhost:9516",
-            "external": "http://localhost:9516",
+            "internal": "http://127.0.0.1:9516",
+            "external": "http://127.0.0.1:9516",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         },
         "report": {
-            "internal": "http://localhost:9517",
-            "external": "http://localhost:9517",
+            "internal": "http://127.0.0.1:9517",
+            "external": "http://127.0.0.1:9517",
             "broker": "amqp://guest:guest@127.0.0.1:5672/"
         }
     }
