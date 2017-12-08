@@ -7,8 +7,8 @@
     <toRun type="PythonConfigurationType" name="dev_enironment" />
     <toRun type="PythonConfigurationType" name="dev_event" />
     <toRun type="PythonConfigurationType" name="dev_exec" />
-    <toRun type="PythonConfigurationType" name="dev_game" />
-    <toRun type="PythonConfigurationType" name="dev_game_ctl" />
+    <toRun type="PythonConfigurationType" name="dev_game_controller" />
+    <toRun type="PythonConfigurationType" name="dev_game_master" />
     <toRun type="PythonConfigurationType" name="dev_leaderboard" />
     <toRun type="PythonConfigurationType" name="dev_login" />
     <toRun type="PythonConfigurationType" name="dev_message" />

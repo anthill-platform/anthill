@@ -10,7 +10,8 @@
     <mapping directory="$PROJECT_DIR$/environment" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/event" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/exec" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/game" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/game-controller" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/game-master" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/leaderboard" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/login" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/message" vcs="Git" />

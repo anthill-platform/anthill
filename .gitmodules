@@ -7,9 +7,6 @@
 [submodule "event"]
 	path = event
 	url = https://github.com/anthill-platform/anthill-event.git
-[submodule "game"]
-	path = game
-	url = https://github.com/anthill-platform/anthill-game.git
 [submodule "leaderboard"]
 	path = leaderboard
 	url = https://github.com/anthill-platform/anthill-leaderboard.git
@@ -52,3 +49,9 @@
 [submodule "report"]
 	path = report
 	url = https://github.com/anthill-platform/anthill-report.git
+[submodule "game-master"]
+	path = game-master
+	url = https://github.com/anthill-platform/anthill-game-master.git
+[submodule "game-controller"]
+	path = game-controller
+	url = https://github.com/anthill-platform/anthill-game-controller.git

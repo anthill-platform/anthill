@@ -15,10 +15,8 @@ brew install mysql
 brew install rabbitmq
 brew install redis
 
-mkdir /opt/local
-sudo mkdir /opt/local/anthill
-
-sudo chown -R $(id -u):$(id -g) /opt/local/anthill
+sudo mkdir /usr/local/anthill
+sudo chown -R $(id -u):$(id -g) /usr/local/anthill
 
 # setup a virtualenv
 sudo easy_install virtualenv
