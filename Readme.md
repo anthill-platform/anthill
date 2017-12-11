@@ -17,6 +17,11 @@ It also comes with game client runtimes for various programming languages for qu
 * [Unity](https://github.com/anthill-platform/anthill-runtime-unity/)
 * [C++](https://github.com/anthill-platform/anthill-runtime-cpp/)
 
+# Installation
+
+Please see <a href="doc/Installation.md">Installation Page</a> for a simple
+instruction on how to install Anthill Platform.
+
 # Core services
 | Service | Description |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
