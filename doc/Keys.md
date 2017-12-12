@@ -16,18 +16,14 @@ To do so, an encrypted private/public key pair should be generated.
 ### Pick some strong passwords
 
 The private key is a very sensitive piece of information, so it should encrypted with a strong password.
-Please generate two complex passwords: A (`private_key_passphrase`) and B (`application_keys_passphrase`).
-`A` is used to encrypt the actual private key, and `B` is used to encrypt other application-specific sensitive
-data.
+Please generate a complex password, that will be used to encrypt the actual private key.
 
 Edit the `environments/<environment>/manifests/init.pp` file and change this section:
-```
+```puppet
 class { anthill::keys:
-  private_key_passphrase => "<password A>",
-  application_keys_passphrase => "<password B>",
-
-  application_keys_public => "puppet:///modules/keys/anthill.pub",
-  application_keys_private => "puppet:///modules/keys/anthill.pem",
+  authentication_private_key_passphrase => "<password A>",
+  authentication_public_key => "puppet:///modules/keys/anthill.pub",
+  authentication_private_key => "puppet:///modules/keys/anthill.pem",
 }
 ```
 
@@ -38,8 +34,10 @@ This class will take care on actual installation of these keys.
 Then generate the actual keys:
 ```
 cd /etc/puppetlabs/code/environments/<environment>/modules/keys/files
-openssl genrsa -des3 -out anthill.pem 512
+openssl genrsa -des3 -out anthill.pem 2048
 ```
+
+The key length depends on your situation, but at lease 2048-bit key is recommended.
 
 You will be asked for a password, copy/paste the password A here. 
 Then extract the public key:
