@@ -16,7 +16,7 @@ Configuring them might be quite challenging, so using Puppet in recommended:
 7. Bunch of debian packages itself
 
 Puppet can handle all of these dependencies for you. 
-Is you don't know what Puppet is, please follow [here](https://puppet.com/product/how-puppet-works). 
+If you don't know what Puppet is, please follow [here](https://puppet.com/product/how-puppet-works). 
 For mode detailed steps (if would be necessary) please see 
 [this article](https://www.digitalocean.com/community/tutorials/how-to-install-puppet-4-in-a-master-agent-setup-on-ubuntu-14-04).
 
