@@ -1,0 +1,33 @@
+
+.highlight-bash {
+    border: 0 !important;
+    max-width: 800px;
+    margin: 1px auto 24px auto !important;
+}
+
+.highlight-bash > .highlight::before {
+    display: block;
+    box-sizing: border-box;
+    height: 25px;
+    margin: 0 auto;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 100%;
+    background: #bbb url("window-buttons.png") no-repeat 6px 6px;
+    background-size: 59px 14px;
+    content: "";
+}
+
+.highlight-bash > .highlight > pre {
+    background-color: #151515 !important;
+    color: #9CD9F0 !important;
+    box-sizing: border-box;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    user-select: all;
+}
+
+.highlight-bash > .highlight > pre > span {
+    color: #9CD9F0 !important;
+}
