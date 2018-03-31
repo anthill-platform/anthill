@@ -8,15 +8,18 @@ Installation
 
 Along with actual services, Anthill Platform consists of a lot of
 external components. Configuring them might be quite challenging, so
-using Puppet in recommended:
+using Puppet in recommended.
 
-1. **Nginx** as a reverse proxy and a load balancer
-2. **MySQL 5.7** database for primary content storage
-3. **Redis** for fast key/value
-4. **RabbitMQ** for internal communication across services
-5. **Supervisor** to roll actual services
-6. **Python 2.7** with bunch of packages
-7. Bunch of debian packages themselves
+.. toggle-header::
+    :header: **What will be installed**
+
+    1. **Nginx** as a reverse proxy and a load balancer
+    2. **MySQL 5.7** database for primary content storage
+    3. **Redis** for fast key/value
+    4. **RabbitMQ** for internal communication across services
+    5. **Supervisor** to roll actual services
+    6. **Python 2.7** with bunch of packages
+    7. Bunch of debian packages themselves
 
 Puppet can handle all of these dependencies for you. If you don’t know
 what Puppet is, please follow

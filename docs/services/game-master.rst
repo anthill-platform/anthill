@@ -17,34 +17,79 @@ This service solves them all, the rest is completely up to the game.
 .. seealso::
    `Source Code <https://github.com/anthill-platform/anthill-game-master>`_
 
+.. _game-master-concepts:
+
 Concepts
 --------
 
 Game Service is actually made out of two services: a Master Service and a Controller Service.
 
--  **Master Service**. Master Service is a part of Game Service that holds the information about all rooms and balances Players across multiple Hosts. Also it heartbeats health status of each Host and routes Players to a healthy one if some Host dies.
+.. glossary::
 
--  **Controller Service**. Controller Service is a second part of Game Service. It runs on a certain Host and spawns Game Server instance on it when requested by Master Service. Also it heartbeats health status of each Game Server running on Host and stops it if it stops responding or crashes. See Controller Service documentation.
+   Master Service
+      Master Service is a part of Game Service that holds the information about all rooms and balances Players
+      across multiple Hosts. Also it heartbeats health status of each Host and routes Players to a
+      healthy one if some Host dies.
 
--  **Room**. Room represents a single game instance the player may join. Each room has a limit of maximum players on it and may contain custom setting to search upon.
+   Controller Service
+      Controller Service is a second part of Game Service. It runs on a certain Host and spawns Game Server instance
+      on it when requested by Master Service. Also it heartbeats health status of each Game Server running on Host and
+      stops it if it stops responding or crashes. See Controller Service documentation.
 
--  **Game Server**. Game Server (GS) is a completely game-specific piece of software that runs server side, holds a single game instance and a may be addressed by according room.
+   Room
+      Room represents a single game instance the player may join. Each room has a limit of maximum players on it
+      and may contain custom setting to search upon.
 
--  **Host**. Host is actually a single hardware machine that can run multiple Game Servers on itself. Since only limited number of Game Servers can be spawned on each host due to hardware limitations, multiple hosts may be grouped by a Region.
+   Game Server
+      Game Server (GS) is a completely game-specific piece of software that runs server side, holds a single game
+      instance and a may be addressed by according room.
 
--  **Region**. Region is a group of Hosts (even with a single one) that physically located on a same geographical region (or Data Center). Players may search rooms only on certain Region to ensure low latency.
+   Game Server Configuration
+      Game Server Configuration is a way to launch same piece of software (particularly Game Servers) in different
+      "modes", each of whom could serve totally different purpose.
 
--  **Party**. In certain cases, partying players together is required before (or without) the actual Game Server being instantiated:
+      For example, you can have a ``lobby`` configuration to gather players together before actual games, and
+      ``main`` configuration for actual games. These two configurations have different options tuned, but ran by the
+      same software.
 
-    -  You want to start the Game Server only when full room of people is matched;
-    -  Players want to discuss the future map / game mode before starting the game;
-    -  Players want to join a random game with their friends.
+   Host
+      Host is actually a single hardware machine that can run multiple Game Servers on itself.
+      Since only limited number of Game Servers can be spawned on each host due to hardware limitations,
+      multiple hosts may be grouped by a Region.
+
+   Region
+      Region is a group of Hosts (even with a single one) that physically located on a same geographical region
+      (or Data Center). Players may search rooms only on certain Region to ensure low latency.
+
+   Party
+      In certain cases, partying players together is required before (or without)
+      the actual Game Server being instantiated:
+
+         -  You want to start the Game Server only when full room of people is matched;
+         -  Players want to discuss the future map / game mode before starting the game;
+         -  Players want to join a random game with their friends.
 
 Overall Architecture
 --------------------
 
 .. image:: images/game_service_architecture.png
     :width: 760px
+
+Flow charts
+-----------
+
+.. toctree::
+   :maxdepth: 1
+
+   game-master/flow
+
+REST API
+--------
+
+.. toctree::
+   :maxdepth: 2
+
+   game-master/api
 
 
 Party documentation
@@ -55,23 +100,6 @@ Party documentation
 
    game-master/party
 
-
-REST API
---------
-
-.. toctree::
-   :maxdepth: 1
-
-   game-master/api
-
-
-Flow charts
------------
-
-.. toctree::
-   :maxdepth: 1
-
-   game-master/flow
 
 JSON-RPC Communication Flow
 ---------------------------

@@ -6,7 +6,7 @@ In order to spawn a game server right, few steps is done.
 1. Creating a room
 ~~~~~~~~~~~~~~~~~~
 
-The Player decides to create a room, or just join to first room that matches required criteria. In case of second option, if no rooms found that match the criteria, a new one is created.
+The Player decides to create a room, or just joins to first room that matches required criteria. In case of second option, if no rooms found that match the criteria, a new one is created.
 
 2. Resolving a Region
 ~~~~~~~~~~~~~~~~~~~~~
@@ -44,7 +44,7 @@ Alongside with those arguments, depending of Game Server Configuration, a bunch 
 - Those who defined in ``Environment Variables`` section of the Game Server Configuration.
 - ``login:access_token`` A complete and working :ref:`access-token` instance of server-side use.
 - ``discovery:services`` A JSON Object with predefined key/value list of service locations for server-side use. See ``Discover Services`` section of the Game Server Configuration.
-- ``game:max_players`` Maximum players the room can take (on which this Game Server is spawned upon).
+- ``game:max_players`` Maximum players the Room can take (on which this Game Server is spawned upon).
 - ``room:settings`` A JSON Object with custom room settings as defined by player.
 - ``server:settings`` A JSON Object with Custom Server Configuration Settings (see according section of the Game Server Configuration).
 
@@ -113,12 +113,20 @@ Once the Game Server instance is completely initialized and ready to receive con
             "id": 1
         }
 
--  If the argument ``settings`` passed along the request, the rooms settings is updated with that argument. For example, if player requested to create a room with ``{"map": "badone"}`` and the Game Server instance realized there is no such map, in can choose the other map instead, and pass ``{"map": "goodone"}`` as the ``settings`` argument to the ``inited`` call. That would lead to the room have correct map setting no matter what setting the Player have passed.
--  The Controller will respond ``{"status": "OK"}`` to that request if everything went fine. If the error is returned instead, the Game Server instance should exit the process (and will be forced to at some point).
+-  If the argument ``settings`` passed along the request, the Rooms settings is updated with that argument.
+   For example, if player requested to create a room with ``{"map": "badone"}`` and the Game Server instance
+   realized there is no such map, in can choose the other map instead, and pass ``{"map": "goodone"}`` as the
+   ``settings`` argument to the ``inited`` call. That would lead to the Room have correct map setting no matter
+   what setting the Player have passed.
+-  The Controller will respond ``{"status": "OK"}`` to that request if everything went fine. If the error is returned
+   instead, the Game Server instance should exit the process (and will be forced to at some point).
 
-The Game Server instance has around 30 seconds (as defined in ``SPAWN_TIMEOUT``) to send the ``inited`` request to the Controller that the Game Server is completely initialized.
+The Game Server instance has around 30 seconds (as defined in ``SPAWN_TIMEOUT``) to send the ``inited`` request to
+the Controller that the Game Server is completely initialized.
 
-**Warning**: If the Game Server would not manage to initialize within that time, the Game Server instance will be killed, and the error is returned to the Player.
+.. warning::
+    If the Game Server would not manage to initialize within that time, the Game Server instance will be killed,
+    and the error is returned to the Player.
 
 8. The Game Server instance details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,8 +135,8 @@ Once the ``inited`` request is called, the Master Service will return the Game S
 
 -  The host location of the Game Server instance
 -  The ports made available for that particular Game Server instance
--  The room Registration Key
--  The room Settings (original or as Game Server instance modified them)
+-  the Room Registration Key
+-  the Room Settings (original or as Game Server instance modified them)
 
 That information is need to be used by Player to perform a connection to the Game Server Instance.
 
@@ -137,52 +145,75 @@ That information is need to be used by Player to perform a connection to the Gam
 
 After complete initialization, Game Controller service with periodically check (or heartbeat) the Game Server instance status using ``status`` request.
 
-Please note that this request comes from the Game Controller side, to the Game Controller instance:
+Please note that this request comes from the Game Controller side, to the Game Server instance:
 
 ::
 
     Controller Service -> { request 'status' } -> Game Server instance
 
-The Game Server instance is required to respond to that request with ``{"status": "ok"}`` object. If other response is received, or no response received in certain time, the Game Server instance will be shot down as “hang”.
+The Game Server instance is required to respond to that request with ``{"status": "ok"}`` object.
+If other response is received, or no response received in certain time, the Game Server instance will
+be shot down as “hang”.
 
+.. _join-room-flow:
 
 Join Room Flow
 ==============
 
-No matter if the Game Server instance is spawned or not, the Player is required to be joined into the room in order to connect to the Game Server.
+The Player is required to be joined into the Room in order to connect to the Game Server.
+The join process ensures that no extra player can join the Game Server due to concurrency issues (as hundreds of
+Players are constantly join to different Game Servers).
 
-The join process ensures that no extra player can join the Game Server due to concurrency issues (as hundreds of Players are constantly join to different Game Servers).
+The flow goes like this:
 
-Also, the join process makes the :ref:`access-token` of the Player to be available on the Game Server, yet with no :ref:`access-token` being sent directly to the Game Server (for server-side use) as :ref:`access-token` is a sensitive piece of information and communication between the Game Server instance and the Player if often unencrypted.
+    1. The Player successfully "joins" into the Room, gets room ``location`` and ``key`` in return.
+    2. Using the ``location`` information, the Player connects to the Game Server using any protocol,
+       that's up to the game
+    3. The Player sends the ``key`` to the Game Server. The Game Server checks the ``key``, registering the Player
+       in the Room at the same time. If the key has been rejected, the Player gets disconnected.
+
+Also, the join process makes the :ref:`access-token` of the Player to be available on the Game Server,
+yet with no :ref:`access-token` being sent directly to the Game Server (for server-side use) as :ref:`access-token`
+is a sensitive piece of information and communication between the Game Server instance and the Player
+if often unencrypted.
 
 1. Room Registration
 ~~~~~~~~~~~~~~~~~~~~
 
-After the join call, no matter if the Game Server instance have just spawned, or it’s an old room, a registration process on that room is performed. Registration process ensures that:
+After the join call, no matter if the Game Server instance have just spawned, or it’s an old room,
+a registration process on that room is performed. Registration process ensures that:
 
 -  Player has a valid access token for a join
 -  Player has not exceeded the join rate limits
--  There is enough space for that Player in the room
+-  There is enough space for that Player in the Room
+-  Player has not been banned from Matchmaking
 
-Due to concurrency, multiple Players can perform a join request on the same room at the same time, yet it may has only one free slot left. Is that case, only the first one will succeed.
+Due to concurrency, multiple Players can perform a join request on the same room at the same time,
+yet it may has only one free slot left. Is that case, only the first one will succeed.
 
 As a response to a successful registration the Master Service will respond to the Player with some information:
 
 -  The host location of the Game Server instance for that room
 -  The ports made available for that particular Game Server instance
--  The room registration Key
--  The room Settings (original or as Game Server instance modified them)
+-  the Room registration Key
+-  the Room Settings (original or as Game Server instance modified them)
 
-The room registration Key is important and acts as a proof that the Player has the right to join that room.
+the Room registration Key is important and acts as a proof that the Player has the right to join that room.
 
-At that point, the registration is temporary and will be released automatically within 30 seconds (as described in ``AUTO_REMOVE_TIME``). To ensure the registration is permanent, the Player need to do the next steps.
+.. note:: At that point, the registration is temporary and will be released automatically within 30 seconds
+    (as described in ``AUTO_REMOVE_TIME``). To ensure the registration is permanent,
+    the Player need to do the next steps.
 
 2. Connecting
 ~~~~~~~~~~~~~
 
-Then, the Player connects to the Game Sever instance, using the information in the previous step (such as a host location, or ports). The connection protocol (either UDP or TCP or even both) is completely up to the game.
+Then, the Player connects to the Game Sever instance, using the information in the previous step
+(such as a host location, or ports). The connection protocol (either UDP or TCP or even both)
+is completely up to the game.
 
-After the successful connection, the Player sends the room registration Key to the Game Server instance (again, the way it is sent is completely up to the game). If no registration Key is sent within some time, the Game Server instance must drop that connection.
+After the successful connection, the Player sends the Room registration Key to the Game Server instance
+(again, the way it is sent is completely up to the game).
+If no registration Key is sent within some time, the Game Server instance must drop that connection.
 
 Then, the Game Server instance should try to exchange the registration Key using a JSON-RPC request ``joined``.
 
@@ -234,7 +265,7 @@ Also, a successful request will make room registration permanent (until the Play
 ~~~~~~~~~~~~~~~~~~~
 
 If both ``extend_token`` and ``extend_scopes`` are passed diring the ``joined`` request, the :ref:`access-token` of the
-player will be `extended <https://github.com/anthill-services/anthill-login/blob/master/doc/API.md#extend-access-token>`__ using ``extend_token``
+player will be extended (see :ref:`extend-access-token`) using ``extend_token``
 as master token and ``extend_scopes`` as a list of scopes the Player’s :ref:`access-token` should be extended with.
 
 Token extention is used to do strict actions server side in behalf of the Player while the Player itself cannot. For example,

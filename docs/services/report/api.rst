@@ -1,4 +1,6 @@
 
+.. title:: REST API
+
 Upload a Report
 ===============
 

@@ -1,4 +1,6 @@
 
+.. title:: REST API
+
 .. _oauth:
 
 OAuth 2.0
@@ -360,6 +362,8 @@ This request has no response body.
      - Some arguments are missing or wrong.
    * - ``403 Forbidden``
      - Token is not valid.
+
+.. _extend-access-token:
 
 Extend Access Token
 ===================

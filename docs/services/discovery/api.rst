@@ -1,3 +1,6 @@
+
+.. title:: REST API
+
 About Multiple networks
 =======================
 

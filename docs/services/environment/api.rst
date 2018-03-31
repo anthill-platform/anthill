@@ -1,3 +1,6 @@
+
+.. title:: REST API
+
 .. _environment-service-rest-api:
 
 Get the Environment information
@@ -21,9 +24,9 @@ version should be hardcoded inside the game.
    * - Argument
      - Description
    * - ``<game-name>``
-     - Name of the current application
+     - Name of the current application, see :ref:`application-name`
    * - ``<game-version>``
-     - Current version of the application
+     - Current version of the application, see :ref:`application-version`
 
 → Response
 ----------
