@@ -8,7 +8,7 @@ This service allows players to prove themselves, in a bunch of different
 ways.
 
 .. seealso::
-   `Source Code <https://github.com/anthill-platform/anthill-login>`_
+   :anthill-service-source:`Source Code <login>`
 
 Login process
 -------------
@@ -23,8 +23,10 @@ Authentication process takes these steps:
 4. System verifies if the account has the scopes requested;
 5. Access token for the account is generated;
 
-Player Accounts
----------------
+.. _player-account:
+
+Player Account
+--------------
 
 Login service have simple account system: each player have unique
 personal account number attached to him. If the user is logged in for a
@@ -39,7 +41,7 @@ The main purpose of Login Service is to verify that player ``X`` owns account ``
    For example, user could login using ``google`` or ``facebook``, but both
    of them will lead to the same account.
 
-.. _gamepace:
+.. _gamespace:
 
 Gamespace
 ---------
@@ -61,6 +63,8 @@ put them under the same gamespace.
 Credentials
 -----------
 
+Login Service allows to :ref:`authenticate` a player in many different ways.
+
 Say a bowling club provides a free game for clients who’s birthday
 today. To prove the day of birth, a client may profide a passport, or
 driver’s license, or even a birth certificate.
@@ -72,8 +76,6 @@ credentials that prove same account. For example, user could login using
 ``google`` or ``facebook``, but both of them will lead to the same
 account.
 
-Login Service allows to :ref:`authenticate` a player in a different ways.
-
 .. toctree::
    :maxdepth: 1
 
@@ -82,8 +84,10 @@ Login Service allows to :ref:`authenticate` a player in a different ways.
 .. hint:: To authenticate with corresponding credential type, pass the appropriate
    credential type as ``credential`` field during authentication.
 
-Scope of Access
----------------
+.. _access-scopes:
+
+Scopes of Access
+----------------
 
 At some point, there should be a way to ensure the player ``A`` has the
 right to do something, but player ``B`` has not.
@@ -127,6 +131,10 @@ service, a public-key cryptography method is used:
 In addition, there’s a system that ensures the only one token is valid
 for account at the same time, to avoid using same account from multiple
 devices.
+
+.. warning::
+   Treat access tokens as **raw string** at all times. The format of an access token can change at any time, so the
+   game should make no attempt to parse it.
 
 .. _anthill-keys:
 

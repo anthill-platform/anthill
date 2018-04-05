@@ -60,6 +60,7 @@ You can log in into the :ref:`admin-tool` using these credentials, but the
 added as a ``redirect_uri`` (see above).
 
 .. _authenticate:
+.. _login-service-api-auth:
 
 Authenticate
 ============
@@ -94,7 +95,7 @@ Optional arguments:
      - Description
      - Default value
    * - ``should_have``
-     - Comma-separated list of scopes the user should definately acquire, or ``403 Forbidden`` will be returned. Useful in cases when player is OK with not having some of scopes.
+     - Comma-separated list of scopes the user should definitely acquire, or ``403 Forbidden`` will be returned. Useful in cases when player is OK with not having some of scopes.
      - ``*``, everything requested should be retrurned.
    * - ``info``
      - A JSON object of the additional info would be attached to account (for example, device ID)
@@ -151,6 +152,8 @@ instead:
    * - ``409 Conflict``
      - A merge conflict is happened, a Conflict Resolve is required
 
+.. _login-service-api-attach:
+
 Attach Credential
 =================
 
@@ -189,6 +192,11 @@ Authenticate call:
    authentication, as ``attach_to`` argument;
 3. The system will try to attach credential ``facebook:12345678`` to
    account ``A`` as long as credential is not used elsewhere;
+
+.. _account-conflict:
+
+Account Conflict
+================
 
 In case credential ``facebook:12345678`` has already attached to a
 different account, or already has multiple accounts attached, a conflict
@@ -261,6 +269,8 @@ Conflict. Possible conflict reasons:
     On of the account numbers should be used as ``resolve_with`` when
     dealing with Resolve Conflict.
 
+.. _login-service-api-resolve:
+
 Resolve Conflict
 ================
 
@@ -326,6 +336,8 @@ instead:
         "scopes": [<array of allowed scopes>]
     }
 
+.. _login-service-api-validate:
+
 Validate Access Token
 =====================
 
@@ -364,6 +376,7 @@ This request has no response body.
      - Token is not valid.
 
 .. _extend-access-token:
+.. _login-service-api-extend:
 
 Extend Access Token
 ===================
@@ -422,6 +435,8 @@ A JSON object with a new token and it’s expiration date.
 
     {
         "token": "<improved access token>",
+        "scopes": [<scopes of improved token>],
+        "account": "<account of the original access_token>",
         "expires_in": <time, in seconds, for the new token to expire>
     }
 

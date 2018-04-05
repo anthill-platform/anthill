@@ -8,6 +8,9 @@ and do things here and there. In Javascript!
 The service uses Git to host your code on, so you can setup a repository, put your javascript there, configure it on
 the service, and you’re all set.
 
+.. seealso::
+   :anthill-service-source:`Source Code <exec>`
+
 Javascript support
 ------------------
 

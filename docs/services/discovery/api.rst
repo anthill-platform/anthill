@@ -1,25 +1,10 @@
 
 .. title:: REST API
 
-About Multiple networks
-=======================
+.. _discovery-service-api-discover:
 
-Often services need to use internal routes to communicate with other
-services for security reasons. That’s why discovery service has multiple
-networks defined: ``external`` and ``internal``. The ``external``
-network is used by end users, and available online from the web.
-
-On the other hand, the ``internal`` network is only accessible from
-inside of the Anthill Platform. Often, services give more privileges for
-internal requests. Some requests can only be called from the inside.
-Even the ``internal`` location of a service can be discovered only from
-the inside.
-
-Each service has a list of IP addresses, request from who is considered
-to be internal, usually it’s a local subnet, like ``10.0.0.0/24``.
-
-Discover service
-================
+Discover a service
+==================
 
 Returns the service’s ``external`` location.
 
@@ -46,14 +31,14 @@ In case of success, a complete URL of the service is returned:
 
 .. code-block:: bash
 
-    https://login-dev.anthillplatfrom.org/v0.1
+    https://login-dev.anthillplatfrom.org
 
 This URL should be used as a base. For example, if service provides api
 called ``auth``, the request would be:
 
 .. code-block:: bash
 
-    POST https://login-dev.anthillplatfrom.org/v0.1/auth
+    POST https://login-dev.anthillplatfrom.org/auth
 
 .. list-table::
    :widths: 50 50

@@ -2,6 +2,7 @@
 .. title:: REST API
 
 .. _environment-service-rest-api:
+.. _environment-service-api-get-environment:
 
 Get the Environment information
 ===============================

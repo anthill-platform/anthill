@@ -1,4 +1,6 @@
 
+.. _anonymous:
+
 anonymous
 =========
 
@@ -185,6 +187,8 @@ These arguments are expected during authentication:
      - Bundle ID of your Application
    * - ``username``
      - A playerID retreived from iOS
+
+.. _steam:
 
 steam
 =====

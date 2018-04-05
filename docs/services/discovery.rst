@@ -9,7 +9,8 @@ Each service is represented by few things: service ``ID`` and service
 locations.
 
 .. seealso::
-   `Source Code <https://github.com/anthill-platform/anthill-discovery>`_
+   :doc:`Runtime Implementation <../runtimes/services/discovery>`,
+   :anthill-service-source:`Source Code <discovery>`
 
 Multiple networks
 -----------------

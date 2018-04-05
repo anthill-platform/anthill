@@ -15,7 +15,7 @@ This service solves them all, the rest is completely up to the game.
    Game Master Service covers one part of the matchmaking services only. See :doc:`game-controller` for another part.
 
 .. seealso::
-   `Source Code <https://github.com/anthill-platform/anthill-game-master>`_
+   :anthill-service-source:`Source Code <game-master>`
 
 .. _game-master-concepts:
 

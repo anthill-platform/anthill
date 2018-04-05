@@ -7,9 +7,11 @@
    puppet
    services
    development
+   runtimes
+   concepts
 
 Anthill Platform
-==============================
+================
 
 An open source back-end platform for games that solves the **online** problem.
 
@@ -27,9 +29,7 @@ It also comes with game client runtimes for various programming
 languages for quick start. They allow to interact with services and
 handle most of core tasks under the hood.
 
-- `Java`_
-- `Unity`_
-- `C++`_
+Please refer to :doc:`runtimes` for additional information.
 
 Installation
 ------------
@@ -39,72 +39,67 @@ Anthill Platform on a Linux machine.
 
 If you'd like to test it out on Mac, please see :doc:`development`.
 
-Core services
--------------
+Core Services List
+------------------
 
 .. list-table::
-   :widths: 20 80
+   :widths: 20 60 20
    :header-rows: 1
 
    * - Service
      - Description
-   * - `environment`_
+     - Source Code
+   * - :doc:`services/environment`
      - Define a set of environments and dynamically assign each game version to any of those
-   * - `discovery`_
+     - :anthill-service-source:`Source Code <environment>`
+   * - :doc:`services/discovery`
      - Discover each service location dynamically by it’s ID
-   * - `login`_
-     - Solves authentication. Login using any kind of credential (like google or facebook), or your own
-   * - `profile`_
-     - Manages user profiles. Just a plain JSON object, completely defined by a game
-   * - `social`_
+     - :anthill-service-source:`Source Code <discovery>`
+   * - :doc:`services/login`
+     - Login using any kind of credential (like google or facebook), or your own
+     - :anthill-service-source:`Source Code <login>`
+   * - :doc:`services/profile`
+     - Manages user profiles, plain JSON objects, completely defined by a game
+     - :anthill-service-source:`Source Code <profile>`
+   * - :doc:`services/social`
      - Social interactions (social network’s friend list etc)
-   * - `config`_
+     - :anthill-service-source:`Source Code <social>`
+   * - :doc:`services/config`
      - Delivers dynamic configuration to the user using handy schema editor
-   * - `leaderboard`_
+     - :anthill-service-source:`Source Code <config>`
+   * - :doc:`services/leaderboard`
      - Competes users around by anything
-   * - `exec`_
+     - :anthill-service-source:`Source Code <leaderboard>`
+   * - :doc:`services/exec`
      - Server-side game-depended javascript code execution (validation and so on)
-   * - `event`_
+     - :anthill-service-source:`Source Code <exec>`
+   * - :doc:`services/event`
      - Time-Limited events service
-   * - `common`_
+     - :anthill-service-source:`Source Code <event>`
+   * - :doc:`services/common`
      - A shared library with common functionality for each service
-   * - `admin`_
-     - Internal service, allows to manage every service across the environment using web browser
-   * - `dlc`_
+     - :anthill-service-source:`Source Code <common>`
+   * - :doc:`services/admin`
+     - Manage every service using a web browser
+     - :anthill-service-source:`Source Code <admin>`
+   * - :doc:`services/dlc`
      - Downloadable content delivery service
-   * - `game`_
-     - Matchmaking service, allows to start any game server to a server side, and match users around it
-   * - `message`_
+     - :anthill-service-source:`Source Code <dlc>`
+   * - :doc:`services/game`
+     - Matchmaking service, hosts any game server, and matches users around it
+     - :anthill-service-source:`Source Code <game>`
+   * - :doc:`services/message`
      - Delivers messages from anything to anything, realtime
-   * - `store`_
+     - :anthill-service-source:`Source Code <message>`
+   * - :doc:`services/store`
      - Monetization service
-   * - `promo`_
+     - :anthill-service-source:`Source Code <store>`
+   * - :doc:`services/promo`
      - Promo codes service
-   * - `static`_
+     - :anthill-service-source:`Source Code <promo>`
+   * - :doc:`services/static`
      - Simple static files hosting service (for players to upload)
-   * - `report`_
-     - Service for players to post reports to the service. Later the reports can be analyzed and used.
-
-.. _Java: https://github.com/anthill-platform/anthill-runtime-java/
-.. _Unity: https://github.com/anthill-platform/anthill-runtime-unity/
-.. _C++: https://github.com/anthill-platform/anthill-runtime-cpp/
-
-.. _environment: https://github.com/anthill-platform/anthill-environment/
-.. _discovery: https://github.com/anthill-platform/anthill-discovery/
-.. _login: https://github.com/anthill-platform/anthill-login/
-.. _profile: https://github.com/anthill-platform/anthill-profile/
-.. _social: https://github.com/anthill-platform/anthill-social/
-.. _config: https://github.com/anthill-platform/anthill-config/
-.. _leaderboard: https://github.com/anthill-platform/anthill-leaderboard/
-.. _exec: https://github.com/anthill-platform/anthill-exec/
-.. _event: https://github.com/anthill-platform/anthill-event/
-.. _common: https://github.com/anthill-platform/anthill-common/
-.. _admin: https://github.com/anthill-platform/anthill-admin/
-.. _dlc: https://github.com/anthill-platform/anthill-dlc/
-.. _game: https://github.com/anthill-platform/anthill-game-master/
-.. _message: https://github.com/anthill-platform/anthill-message/
-.. _store: https://github.com/anthill-platform/anthill-store/
-.. _promo: https://github.com/anthill-platform/anthill-promo/
-.. _static: https://github.com/anthill-platform/anthill-static/
-.. _report: https://github.com/anthill-platform/anthill-report/
-
+     - :anthill-service-source:`Source Code <static>`
+   * - :doc:`services/report`
+     - Service for players to post reports to the service
+     - :anthill-service-source:`Source Code <report>`

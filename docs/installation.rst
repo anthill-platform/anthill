@@ -4,7 +4,7 @@ Installation
 
 .. note::
     If you need to install Anthill Platform on Mac OS X for testing purposes, see :doc:`development` instead.
-    This page describes installation steps on Linux (Debian 8) for production purposes.
+    This page describes installation steps on Linux (Debian 8 or 9) for production purposes.
 
 Along with actual services, Anthill Platform consists of a lot of
 external components. Configuring them might be quite challenging, so
@@ -19,7 +19,7 @@ using Puppet in recommended.
     4. **RabbitMQ** for internal communication across services
     5. **Supervisor** to roll actual services
     6. **Python 2.7** with bunch of packages
-    7. Bunch of debian packages themselves
+    7. Bunch of Debian packages themselves
 
 Puppet can handle all of these dependencies for you. If you don’t know
 what Puppet is, please follow
@@ -30,15 +30,46 @@ article <https://www.digitalocean.com/community/tutorials/how-to-install-puppet-
 Installation Steps
 ------------------
 
-1. Install Debian
+1. Choose a domain name
+~~~~~~~~~~~~~~~~~~~~~~~
+
+In order you clients to reach your servers, a public domain name (like
+``example.com``) should be bound to machine’s IP address(ses). Simplest
+way would be to create ``A`` record for ``*.<domain>.com``, for example
+``*.example.com``. That would make go any of subdomains requests to this
+machine (like ``foo.example.com/test`` or ``bar.example.com/test``).
+
+2. Install Debian
 ~~~~~~~~~~~~~~~~~
 
-Setup Debian 8 operating system on the target machine with SSH server
-running. Currently, Puppet configuration supports only Debian 8. This
-tutorial assumes that you have apt updated and working with root
-privilages.
+Setup Debian operating system on the target machine with SSH server running. Currently, Puppet configuration supports
+only Debian 8 and 9. This tutorial assumes that you have apt updated and working with root privileges.
 
-2. (Optional) Add SSH keys
+Please pay attention to define correct hostname to the machine you're installing Debian on. As described in
+previous step, having correct hostname might save your time.
+
+.. toggle-header::
+    :header: Good practice example **See**
+
+        .. code::
+
+            <region>-<number>-<environment>.example.com
+
+        .. glossary::
+
+            region
+
+                `ISO 3166 <https://en.wikipedia.org/wiki/ISO_3166-1>`__ shortcut for the country the server is located in
+
+            number
+
+                Incremented number to discriminate several servers in same country
+
+            environment
+
+                ``production``, ``dev``, ``beta``, etc, depending on the application
+
+3. (Optional) Add SSH keys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Upload your public SSH key to target machine so login would go faster:
@@ -49,22 +80,32 @@ Upload your public SSH key to target machine so login would go faster:
 
 If you haven’t generated your keys yet, do ``ssh-keygen``.
 
-3. Install Puppet
+4. Install Puppet
 ~~~~~~~~~~~~~~~~~
 
 First of all, add the puppet’s ``deb`` package to the apt:
 
-.. code-block:: bash
+.. tabs::
 
-    cd ~ && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-jessie.deb
-    dpkg -i puppetlabs-release-pc1-jessie.deb
-    apt update
+    .. tab:: Debian 9
 
-Puppet is primarily made of two components: ``Puppet Server`` and
-``Puppet Agent``. Puppet Server used to hold configurations (like “we
-need database and nginx”). Puppet Agent actually applies these
-configurations (like “install database or nginx using Puppet Server
-configuration”).
+        .. code-block:: bash
+
+            cd ~ && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-stretch.deb
+            dpkg -i puppetlabs-release-pc1-stretch.deb
+            apt update
+
+    .. tab:: Debian 8
+
+        .. code-block:: bash
+
+            cd ~ && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-jessie.deb
+            dpkg -i puppetlabs-release-pc1-jessie.deb
+            apt update
+
+Puppet is primarily made of two components: **Puppet Server** and **Puppet Agent**.
+Puppet Server used to hold configurations (like “we need database and nginx”). Puppet Agent actually applies these
+configurations (like “install database or nginx using Puppet Server configuration”).
 
 Practically, a system have one Puppet Server node, and many Puppet Agent
 nodes, so once applied on the Server, all Agents will install those
@@ -82,7 +123,7 @@ Puppet Server and Puppet Agent on a same machine.
 
             apt -y install puppetserver
 
-        to install both Puppet Server and Agent
+        To install both Puppet Server and Agent on the same node
 
     .. tab:: Multi-Node environment
 
@@ -90,16 +131,18 @@ Puppet Server and Puppet Agent on a same machine.
 
             apt -y install puppetserver
 
-        to install the Puppet Server
+        To install the Puppet Server on the **Master node**
 
         .. code-block:: bash
 
             apt -y install puppet-agent
 
-        for the “Agent nodes”
+        To install the Puppet Agent on the **Agent nodes**
 
-4. Configure the Puppet Server
+5. Configure the Puppet Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This step is required on the Master node only (and for single-node environment node too).
 
 .. code-block:: bash
 
@@ -118,14 +161,7 @@ boots:
 
     /opt/puppetlabs/bin/puppet resource service puppetserver ensure=running enable=true
 
-5. Pick your domain
-~~~~~~~~~~~~~~~~~~~
-
-In order you clients to reach your servers, a domain name (like
-``example.com``) should be bound to this machine’s IP address. Simplest
-way would be to create ``A`` record for ``*.<domain>.com``, for example
-``*.example.com``. That would make go any of subdomains requests to this
-machine (like ``foo.example.com/test`` or ``bar.example.com/test``).
+.. _install-step-domain:
 
 6. Configure your environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -177,8 +213,8 @@ This folder contains all modules Puppet needs, including modules for
 Anthill Platform itself, and some external modules from open-source
 developers.
 
-7. Deploy your Puppet Configuration repository onto the Puppet Server node
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+7. Deploy your Puppet Configuration repository onto the Master node
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The configuration repository need to be placed at
 ``/etc/puppetlabs/code`` folder:
@@ -191,13 +227,13 @@ The configuration repository need to be placed at
     cd /etc/puppetlabs/code
     git submodule update --init --recursive
 
-8. Configure the Puppet Agent
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+8. Configure the Puppet Agent on each Agent node
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once Puppet Server is configured, Puppet Agents can be used to install
 your environment on the actual machines.
 
-If you’re installing the Puppet Agent on a different machine from Puppet
+If you’re installing the Puppet Agent on a different machine than Puppet
 Server, do this:
 
 .. code-block:: bash

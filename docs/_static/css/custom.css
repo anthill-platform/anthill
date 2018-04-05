@@ -18,6 +18,12 @@
     content: "";
 }
 
+.highlight-bash > .highlight {
+    border: none !important;
+    background: none !important;
+}
+
+
 .highlight-bash > .highlight > pre {
     background-color: #151515 !important;
     color: #9CD9F0 !important;
@@ -25,7 +31,6 @@
     padding: 10px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    user-select: all;
 }
 
 .highlight-bash > .highlight > pre > span {

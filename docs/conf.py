@@ -33,6 +33,7 @@
 extensions = ['sphinx.ext.intersphinx',
               'sphinx.ext.todo',
               'sphinx.ext.githubpages',
+              'sphinx.ext.extlinks',
               'sphinxcontrib.contentui',
               'sphinx_tabs.tabs']
 
@@ -169,6 +170,9 @@ texinfo_documents = [
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
 
+extlinks = {
+    'anthill-service-source': ('https://github.com/anthill-platform/anthill-%s/', '')
+}
 
 def setup(app):
     app.add_stylesheet('css/custom.css')

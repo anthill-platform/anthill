@@ -5,7 +5,7 @@ A simple service that allows players to post reports to the service.
 Later that reports can be analyzed and used in :ref:`admin-tool`.
 
 .. seealso::
-   `Source Code <https://github.com/anthill-platform/anthill-report>`_
+   :anthill-service-source:`Source Code <report>`
 
 REST API
 --------

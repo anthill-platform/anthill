@@ -960,10 +960,12 @@ If the party had ``close_callback`` defined, a result of execution of such callb
    * - ``400 Bad Arguments``
      - Some arguments are missing or wrong.
 
+.. _create-party-and-open-session:
+
 Create Party And Open Session
 ------------------------------
 
-Creates a fresh new party and opens a Party Session on it.
+Creates a fresh new party and opens a :ref:`party-session` on it.
 
 Web Socket Request
 ~~~~~~~~~~~~~~~~~~
@@ -974,7 +976,7 @@ Web Socket Request
 
     WEB SOCKET /party/create/<application_name>/<application_version>/<game_server_name>/session
 
-.. list-table::
+.. list-table::`
    :header-rows: 1
 
    * - Argument

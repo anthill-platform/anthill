@@ -7,4 +7,4 @@ while :doc:`game-master` manages the whole matchmaking system.
 Please refer the Game Master Service for a documentation for this service.
 
 .. seealso::
-   `Source Code <https://github.com/anthill-platform/anthill-game-controller>`_
+   :anthill-service-source:`Source Code <game-controller>`

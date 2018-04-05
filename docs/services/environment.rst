@@ -15,7 +15,7 @@ This service solves two problems:
    side effects
 
 .. seealso::
-   `Source Code <https://github.com/anthill-platform/anthill-environment>`_
+   :anthill-service-source:`Source Code <environment>`
 
 A Sandbox
 ---------
@@ -67,6 +67,8 @@ Games tend to be outdated once in a while, yet the online services may
 progress constantly. This service allows to bind specific version of
 game to a specific version of API. Once new version of the the API
 released, older versions of games may still use old API.
+
+.. _environment-customisation:
 
 Customization
 -------------
