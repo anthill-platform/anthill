@@ -1,6 +1,6 @@
 
-Concepts
-========
+Other Concepts
+==============
 
 This section describes various concepts the Anthill Platform has.
 
