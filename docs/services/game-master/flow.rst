@@ -35,18 +35,36 @@ On the Host machine, depending of which Game Server Configuration is being spawn
 ``<binary>`` ``<unix domain socket path>`` ``<ports>`` ``<other> ...``
 
 -  *<binary>* A binary file that is actually being instantiated.
--  *<unix domain socket path>* A path to a special `Unix Domain Socket <https://en.wikipedia.org/wiki/Unix_domain_socket>`__ that Controller will communicate with a Game Server upon.
--  *<ports>* A comma separated list of ports us made available for that particular Game Server instance. For example, ``32765,32766``. Game Server instance may listen on that ports as Player may connect to them.
--  *<other> …* Additional command line arguments, that may appear as defined in ``Additional Command Line Arguments`` section of the Game Server Configuration.
+-  *<unix domain socket path>* A path to a special `Unix Domain Socket <https://en.wikipedia.org/wiki/Unix_domain_socket>`__ that
+   Controller will communicate with a Game Server upon.
+-  *<ports>* A comma separated list of ports us made available for that particular Game Server instance.
+   For example, ``32765,32766``. Game Server instance may listen on that ports as Player may connect to them.
+-  *<other> …* Additional command line arguments, that may appear as defined in
+   ``Additional Command Line Arguments`` section of the Game Server Configuration.
+
+.. warning::
+    If the Host machine has the firewall enabled, A port's pool range (by default 38000..40000) must be explicitly enabled.
 
 Alongside with those arguments, depending of Game Server Configuration, a bunch of Environment variables can be defined:
 
-- Those who defined in ``Environment Variables`` section of the Game Server Configuration.
-- ``login:access_token`` A complete and working :ref:`access-token` instance of server-side use.
-- ``discovery:services`` A JSON Object with predefined key/value list of service locations for server-side use. See ``Discover Services`` section of the Game Server Configuration.
-- ``game:max_players`` Maximum players the Room can take (on which this Game Server is spawned upon).
-- ``room:settings`` A JSON Object with custom room settings as defined by player.
-- ``server:settings`` A JSON Object with Custom Server Configuration Settings (see according section of the Game Server Configuration).
+.. list-table::
+    :widths: 20 80
+    :header-rows: 1
+
+    * - Environment Variable
+      - Description
+    * - ``login_access_token``
+      - A complete and working :ref:`access-token` instance of server-side use.
+    * - ``discovery_services``
+      - A JSON Object with predefined key/value list of service locations for server-side use. See ``Discover Services`` section of the Game Server Configuration.
+    * - ``game_max_players``
+      - Maximum players the Room can take (on which this Game Server is spawned upon).
+    * - ``room_settings``
+      - A JSON Object with custom room settings as defined by player.
+    * - ``server_settings``
+      - A JSON Object with Custom Server Configuration Settings (see according section of the Game Server Configuration).
+    * - Environment Variables
+      - Those defined in ``Environment Variables`` section of the Game Server Configuration.
 
 |
 

@@ -182,7 +182,8 @@ Session Methods
 
     ``member_profile`` – see Member Properties.
 
-    ``check_members`` – optional Profile Object that may be used to theck ALL of the members for certain condition, or the join will fail.
+    ``check_members`` – optional :ref:`profile-object` that may be used to check ALL of the members for certain
+    condition, or the join will fail.
 
     .. toggle-header::
         :header: Example **Show**
@@ -200,10 +201,12 @@ Session Methods
                          "@func": "num_child_where",
                          "@test": "==",
                          "@field": "clan-name",
-                         "@value": "TEST_CLAN"
+                         "@cond": "TEST_CLAN"
                      }
                  }
              }
+
+        See :ref:`profile-object-function-num-child-where` for more.
 
 ``start_game(message)`` – to manually start the game.
 
@@ -327,9 +330,9 @@ Identifying A Party
 
 A Game Server can detect if it’s being launched in a party context with environment variables.
 
--  ``party:id`` is such environment variable exists, then the Game Server is started in party context, and the variable contains id of the party. Please note this can be used for references only as the actual party may be destroyed at that point.
--  ``party:settings`` a ``party_settings`` from Party Properties.
--  ``party:members`` a JSON object with initial party members list in following format:
+-  ``party_id`` is such environment variable exists, then the Game Server is started in party context, and the variable contains id of the party. Please note this can be used for references only as the actual party may be destroyed at that point.
+-  ``party_settings`` a ``party_settings`` from Party Properties.
+-  ``party_members`` a JSON object with initial party members list in following format:
 
    ::
 
@@ -347,6 +350,6 @@ Late connection
 
 In some cases, party members can join the Game Server way after creation of it. For example, if ``room_filter`` is defined inside the party, the existing Game Server will be searched before creating a new one. In that case the party members may connect to existing Game Server that was spawned by another party (or without any party at all).
 
-To deal with this, a Game Server can identify a party member by parsing the ``info`` object of the ``joined`` controller request response. The ``info`` object may contain these fields: ``party:id``, ``party:profile``, ``party:role``, their definitions are described above.
+To deal with this, a Game Server can identify a party member by parsing the ``info`` object of the ``joined`` controller request response. The ``info`` object may contain these fields: ``party_id``, ``party_profile``, ``party_role``, their definitions are described above.
 
 See Game Controller Connecting Flow for the information about the ``joined`` request.

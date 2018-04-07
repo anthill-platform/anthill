@@ -4,9 +4,9 @@ Concepts
 
 This section describes various concepts the Anthill Platform has.
 
-.. _profile-object:
+.. toctree::
+    :glob:
+    :maxdepth: 1
+    :caption: Contents:
 
-Profile Object
---------------
-
-Test
+    concepts/*

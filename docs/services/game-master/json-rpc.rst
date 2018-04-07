@@ -1,4 +1,6 @@
 
+.. _controller-service-json-rpc:
+
 Controller Service JSON-RPC API
 ===============================
 
