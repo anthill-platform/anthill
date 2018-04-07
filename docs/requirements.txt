@@ -1,4 +1,4 @@
 sphinx-autobuild==0.7.1
 sphinx-tabs==1.1.7
 sphinx-rtd-theme==0.2.4
-sphinxcontrib-contentui=0.2.2
+sphinxcontrib-contentui==0.2.2
