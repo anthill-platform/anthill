@@ -9,4 +9,4 @@ This section describes various concepts the Anthill Platform has.
     :maxdepth: 1
     :caption: Contents:
 
-    concepts/*
+    other/*

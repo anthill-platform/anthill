@@ -8,7 +8,7 @@
    services
    development
    runtimes
-   other_concepts
+   other
 
 Anthill Platform
 ================
