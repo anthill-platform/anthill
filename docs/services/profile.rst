@@ -1,7 +1,8 @@
 Profile Service
 ===============
 
-A service designed to store player profiles.
+A service designed to store player profiles – special objects to account progress of the Player inside of the game,
+and to sync it remotely from anywhere.
 
 .. seealso::
    :anthill-service-source:`Source Code <profile>`
@@ -13,6 +14,38 @@ User Profile
 
 User Profile is a JSON :ref:`profile-object` that applied to store Player's data on the server backend.
 It can be altered concurrently, or as a whole JSON object, depending on your requirements.
+
+Transaction Instead of Dump
+---------------------------
+
+A good practice to manage :ref:`user-profile` would be to update it in "transactional style" instead of dumping as is.
+
+For example, say you have this profile object:
+
+    .. code-block:: json
+
+        {
+            "a": 10,
+            "b": 15,
+            "c": 100
+        }
+
+Once you have tracked the field ``c`` has increased it's value by 20 and you would like to store that, instead
+of dumping the whole object, use the :ref:`profile-object` magic:
+
+    .. code-block:: json
+
+        {
+            "c": {
+                "@func": "++",
+                "@value": 20
+            }
+        }
+
+The other fields will be left unchanged, and the field ``c`` will be incremented by 20. The result of the increment will
+be returned, so the server that made the request can update the changed accordingly.
+
+That way, if several parties might alter the profile at the same time, you can ensure that no changes can be lost ever.
 
 Profile Access
 --------------

@@ -351,3 +351,62 @@ An object to access to the :doc:`../profile`
     +-------------+-------------------------------------------------------------------------------------------------------------------------------------+
     | ``merge``   | (Optional). If true (default), the JSON objects of existing profile and updated one are mixed, otherwise the old object is replaces |
     +-------------+-------------------------------------------------------------------------------------------------------------------------------------+
+
+- |star| ``profile.query(query, [limit])``
+
+    Search for user profiles with :ref:`json-db-query`.
+
+    .. list-table::
+        :header-rows: 1
+        :widths: 20 80
+
+        * - Argument
+          - Description
+        * - ``profile``
+          - :ref:`json-db-query`
+        * - ``limit``
+          - (Optional) Limit number of resulting profiles, default is 1000.
+
+    A result is a JSON object:
+
+    ::
+
+        {
+            "results": {
+                "1": {
+                    "profile": { ... profile object ... }
+                },
+                "12": {
+                    "profile": { ... profile object ... }
+                },
+                ...
+            },
+            "total_count": <total amount of profiles found>
+        }
+
+admin
+-----
+
+An object for the administrative purposes. Can be accessed only from a server context, and clients have no ways to
+access it.
+
+- |star| ``admin.delete_accounts(accounts, [gamespace_only])``
+
+    .. warning::
+        This actions is destructive and should be proceed with caution. Regular database backups are required before
+        using this.
+
+    Triggers **PERMANENT** deletion of certain accounts from all and every service.
+
+    .. list-table::
+        :header-rows: 1
+        :widths: 20 80
+
+        * - Argument
+          - Description
+        * - ``accounts``
+          - A JSON list of accounts to delete
+        * - ``gamespace_only``
+          - (Optional) Keep the account ID and credentials, so the user can still access data from other gamespaces.
+            Default is true. If true, data will be deleted only from current gamespace.
+            If false, ALL USER DATA FROM ALL GAMESPACES WILL BE PERMANENTLY DELETED.

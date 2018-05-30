@@ -487,6 +487,46 @@ Such formula will do nothing if a total number of child objects of the ``members
     This particular function might be used in ``join_party`` method of :ref:`party-session-methods` to test against
     Party Members while joining the party.
 
+Examples
+--------
+
+Increment likes/stats/etc
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: json
+
+    {
+        "likes-x": {
+            "@func": "++",
+            "@value": 1
+        }
+    }
+
+Claim a reward, but only once
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: json
+
+    {
+        "reward-x": {
+            "@func": "!=",
+            "@cond": true,
+            "@then": true
+        }
+    }
+
+Set a value to a filed, only if it didn't exist earlier
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: json
+
+    {
+        "value-x": {
+            "@func": "not_exists",
+            "@then": 55
+        }
+    }
+
 Applications
 ------------
 

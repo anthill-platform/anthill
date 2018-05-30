@@ -32,7 +32,7 @@ Returns a list of rooms.
    * - ``game_server_name``
      - Game Server Configuration name, see :ref:`game-master-concepts`
    * - ``settings``
-     - Optional. A JSON object, filtering room's settings.
+     - Optional. A :ref:`json-db-query`, filtering room's settings.
    * - ``show_full``
      - Optional, default is ``true``. To return rooms with maximum players capacity reached, or not.
    * - ``my_region_only``
@@ -167,7 +167,7 @@ you don't see any rooms before joining.
    * - ``game_server_name``
      - Game Server Configuration name, see :ref:`game-master-concepts`
    * - ``settings``
-     - Optional. A JSON object, filtering room's settings.
+     - Optional. A :ref:`json-db-query`, filtering room's settings.
    * - ``auto_create``
      - Optional, default is ``true``. Create a new Room, if there is no suitable one. This will instantiate a new
        Game Server instance. If ``false``, and there is no suitable room, a ``404 Not Found`` will be returned.
@@ -249,7 +249,7 @@ somehow difficult due to the fact that you need authoritative party for it (for 
      - A JSON list of accounts ``[1, 20, 444, 888]`` the search fill be performed for. The more accounts the
        more room in the destination room is required.
    * - ``settings``
-     - Optional. A JSON object, filtering room's settings.
+     - Optional. A :ref:`json-db-query`, filtering room's settings.
    * - ``auto_create``
      - Optional, default is ``true``. Create a new Room, if there is no suitable one. This will instantiate a new
        Game Server instance. If ``false``, and there is no suitable room, a ``404 Not Found`` will be returned.
@@ -999,6 +999,8 @@ Additional query artuments:
      - See :ref:`party-properties`
    * - ``room_settings``
      - See :ref:`party-properties`
+   * - ``room_filters``
+     - Optional, A :ref:`json-db-query` in :ref:`party-properties`
    * - ``max_members``
      - See :ref:`party-properties`
    * - ``region``
@@ -1087,10 +1089,10 @@ Additional query arguments:
 
    * - Query Argument
      - Description
-   * - ``party_filter``
-     - A filter to search the parties for. This argument is required.
+   * - ``party_filters``
+     - A JSON Object filter to search the parties for. This argument is required. Simple ``{}`` means no filters.
    * - ``auto_create``
-     - To automatically create a new party if there’s no party that satisfies ``party_filter``. Please note that if ``auto_create`` is ``true``, access scope ``party_create`` is required.
+     - To automatically create a new party if there’s no party that satisfies ``party_filters``. Please note that if ``auto_create`` is ``true``, access scope ``party_create`` is required.
    * - ``member_profile``
      - Member’s profile. See :ref:`party-member-properties`
 
@@ -1106,7 +1108,7 @@ If ``auto_create`` is ``true``, these arguments are expected:
    * - ``create_room_settings``
      - ``room_settings`` in :ref:`party-properties`
    * - ``create_room_filters``
-     - ``room_filters`` in :ref:`party-properties`
+     - ``room_filters`` A :ref:`json-db-query`, in :ref:`party-properties`
    * - ``max_members``
      - See :ref:`party-properties`
    * - ``region``

@@ -39,11 +39,11 @@ Each party has a set of properties:
    * - Name
      - Description
    * - ``party_settings``
-     - Abstract JSON object of party-related settings, completely defined by the game. Parties can be found using these settings (see ``party_filter`` argument on some requests below)
-   * - ``room_setting``
-     - Abstract JSON object of the actual room settings that will be applied to the Game Server once the party starts (if the ``room_filter`` below is defined, and an existing room has been found, this field is ignored)
-   * - ``room_filter``
-     - (Optional) If defined the party will search for appropriate room first upon party startup, instead of creating a new one.
+     - Abstract JSON object of party-related settings, completely defined by the game. Parties can be found using these settings (see ``party_filters`` argument on some requests below)
+   * - ``room_settings``
+     - Abstract JSON object of the actual room settings that will be applied to the Game Server once the party starts (if the ``room_filters`` below is defined, and an existing room has been found, this field is ignored)
+   * - ``room_filters``
+     - (Optional) :ref:`json-db-query`, if defined, the party will search for appropriate room first upon party startup, instead of creating a new one.
 
 Additional properties:
 
@@ -348,7 +348,7 @@ A Game Server can detect if it’s being launched in a party context with enviro
 Late connection
 ~~~~~~~~~~~~~~~
 
-In some cases, party members can join the Game Server way after creation of it. For example, if ``room_filter`` is defined inside the party, the existing Game Server will be searched before creating a new one. In that case the party members may connect to existing Game Server that was spawned by another party (or without any party at all).
+In some cases, party members can join the Game Server way after creation of it. For example, if ``room_filters`` is defined inside the party, the existing Game Server will be searched before creating a new one. In that case the party members may connect to existing Game Server that was spawned by another party (or without any party at all).
 
 To deal with this, a Game Server can identify a party member by parsing the ``info`` object of the ``joined`` controller request response. The ``info`` object may contain these fields: ``party_id``, ``party_profile``, ``party_role``, their definitions are described above.
 
