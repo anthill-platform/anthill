@@ -95,20 +95,20 @@ Examples of opening a ZeroMQ channel for communication:
 
         context = zmq.Context()
         socket = context.socket(zmq.PAIR)
-        socket.connect("ipc://<path to unix domain socket file>")
+        socket.connect("<path to zeromq endpoint>")
 
     .. code-tab:: java
 
         context = new ZContext();
         socket = context.createSocket(ZMQ.PAIR);
-        socket.connect("ipc://<path to unix domain socket file>")
+        socket.connect("<path to zeromq endpoint>")
 
     .. code-tab:: c++
 
         m_context = std::shared_ptr<zmqpp::context>(new zmqpp::context());
         zmqpp::socket_type type = zmqpp::socket_type::pair;
         m_socket = std::shared_ptr<zmqpp::socket>(new zmqpp::socket(*m_context, type));
-        zmqpp::endpoint_t endpoint = "ipc://<path to unix domain socket file>";
+        zmqpp::endpoint_t endpoint = "<path to zeromq endpoint>";
         m_socket->set(zmqpp::socket_option::linger, 1);
         m_socket->connect(endpoint);
 
