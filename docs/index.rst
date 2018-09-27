@@ -37,7 +37,7 @@ Installation
 Please see :doc:`installation` for a simple instruction on how to install
 Anthill Platform on a Linux machine.
 
-If you'd like to test it out on Mac, please see :doc:`development`.
+If you'd like to test it out on Windows or Mac Os X, please see :doc:`development`.
 
 Core Services List
 ------------------

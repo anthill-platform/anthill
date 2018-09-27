@@ -3,7 +3,8 @@ Installation
 ============
 
 .. note::
-    If you need to install Anthill Platform on Mac OS X for testing purposes, see :doc:`development` instead.
+    If you need to install Anthill Platform on Windows or Mac OS X for development purposes,
+    see :doc:`development` instead.
     This page describes installation steps on Linux (Debian 8 or 9) for production purposes.
 
 Along with actual services, Anthill Platform consists of a lot of

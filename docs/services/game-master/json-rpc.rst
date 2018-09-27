@@ -72,11 +72,14 @@ Token extention is used to do strict actions server side in behalf of the Player
 
 If the request is successful, the Controller will respond:
 
-.. code:: json
+   ::
 
     {
-        "access_token": "<Player's access token>",
-        "scopes": ["<A list of Player's access token scopes>"]
+        "access_token": <Player's access token>,
+        "scopes": [<A list of Player's access token scopes>],
+        "account": <Player's account>,
+        "credential": <Player's credential>,
+        "info": { ... additional info ... }
     }
 
 Player Left Request

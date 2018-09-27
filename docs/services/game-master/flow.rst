@@ -32,11 +32,13 @@ At this point, all communication is happens on the Host the spawning process is 
 
 On the Host machine, depending of which Game Server Configuration is being spawned, a new process is instantiated. That process is completely game-specific. Upon starting a process, multiple command line arguments are passed:
 
-``<binary>`` ``<unix domain socket path>`` ``<ports>`` ``<other> ...``
+``<binary>`` ``<zeromq endpoint>`` ``<ports>`` ``<other> ...``
 
 -  *<binary>* A binary file that is actually being instantiated.
--  *<unix domain socket path>* A path to a special `Unix Domain Socket <https://en.wikipedia.org/wiki/Unix_domain_socket>`__ that
-   Controller will communicate with a Game Server upon.
+-  *<zeromq endpoint>* A path to `ZeroMQ Endpoint <http://api.zeromq.org/2-1:zmq-bind>`__ that
+   Controller will communicate with a Game Server upon, depending on the operation system, could have format
+   ``tcp://127.0.0.1:<port>`` (tcp) or ``ipc://<unix domain socket>``
+   (`Unix Domain Socket <https://en.wikipedia.org/wiki/Unix_domain_socket>`__)
 -  *<ports>* A comma separated list of ports us made available for that particular Game Server instance.
    For example, ``32765,32766``. Game Server instance may listen on that ports as Player may connect to them.
 -  *<other> …* Additional command line arguments, that may appear as defined in
