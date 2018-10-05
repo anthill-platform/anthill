@@ -19,7 +19,7 @@ using Puppet in recommended.
     3. **Redis** for fast key/value
     4. **RabbitMQ** for internal communication across services
     5. **Supervisor** to roll actual services
-    6. **Python 2.7** with bunch of packages
+    6. **Python 3.6** with bunch of packages
     7. Bunch of Debian packages themselves
 
 Puppet can handle all of these dependencies for you. If you don’t know
@@ -92,16 +92,16 @@ First of all, add the puppet’s ``deb`` package to the apt:
 
         .. code-block:: bash
 
-            cd ~ && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-stretch.deb
-            dpkg -i puppetlabs-release-pc1-stretch.deb
+            cd ~ && wget http://apt.puppet.com/puppet5-release-stretch.deb
+            dpkg -i puppet5-release-stretch.deb
             apt update
 
     .. tab:: Debian 8
 
         .. code-block:: bash
 
-            cd ~ && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-jessie.deb
-            dpkg -i puppetlabs-release-pc1-jessie.deb
+            cd ~ && wget http://apt.puppet.com/puppet5-release-jessie.deb
+            dpkg -i puppet5-release-jessie.deb
             apt update
 
 Puppet is primarily made of two components: **Puppet Server** and **Puppet Agent**.
@@ -118,14 +118,6 @@ Puppet Server and Puppet Agent on a same machine.
     some node, and just Puppet Agents on the rest of them.
 
 .. tabs::
-    .. tab:: Single-Node environment
-
-        .. code-block:: bash
-
-            apt -y install puppetserver
-
-        To install both Puppet Server and Agent on the same node
-
     .. tab:: Multi-Node environment
 
         .. code-block:: bash
@@ -139,6 +131,14 @@ Puppet Server and Puppet Agent on a same machine.
             apt -y install puppet-agent
 
         To install the Puppet Agent on the **Agent nodes**
+
+    .. tab:: Single-Node environment
+
+        .. code-block:: bash
+
+            apt -y install puppetserver
+
+        To install both Puppet Server and Agent on the same node
 
 5. Configure the Puppet Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -218,7 +218,7 @@ developers.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The configuration repository need to be placed at
-``/etc/puppetlabs/code`` folder:
+``/etc/puppet/code`` folder:
 
 .. code-block:: bash
 
@@ -271,7 +271,7 @@ To install actual software, run the following command
 
     /opt/puppetlabs/puppet/bin/puppet agent --test --certname=<domain name of the machine> --environment=<environment>
 
-.. note:: If you’re trying to run puppet on a different machine from Puppet Server, the first run of the
+.. note:: If you’re trying to run Puppet Agent on a different machine from Puppet Server, the first run of the
     Agent might just return with ``Exiting; no certificate found and waitforcert is disabled`` error due
     to Agent certificate not being signed. To fix this, sign the Puppet Agent’s certificate on a Puppet Server
     node: ``/opt/puppetlabs/puppet/bin/puppet cert sign <domain name of the puppet agent's machine>`` and re-run.
